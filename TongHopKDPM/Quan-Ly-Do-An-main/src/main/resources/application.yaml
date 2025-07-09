@@ -1,0 +1,26 @@
+#file: noinspection undefined
+server:
+  port: 8888
+
+spring:
+  datasource:
+    url: ${DBMS_CONNECTION:jdbc:mysql://localhost:3307/qlda}
+    username: ${DBMS_USERNAME:root}
+    password: ${DBMS_PASSWORD:101204}
+  jpa:
+    properties:
+      hibernate:
+        auto_quote_keyword: true
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+
+com:
+  hcv:
+    jwt:
+      secret-key: 5367566B59703373367639792F423F4528482B4D6251655468576D5A71347437
+      valid-duration: 10 # in seconds
+      refreshable-duration: 1000 # in seconds
+    origin-client-1: http://localhost:3000/
+    origin-client-2: http://localhost:4000/
+
